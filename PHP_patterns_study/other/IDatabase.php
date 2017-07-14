@@ -1,12 +1,9 @@
 <?php 
+namespace other;
 
-namespace adapter;
-
-interface IDatebase
+interface IDatabase
 {
 	function connect($host, $user, $pwd, $dbname);
 	function query($sql);
-	function close($sql);
+	function close();
 }
-
- ?>

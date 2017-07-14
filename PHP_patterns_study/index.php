@@ -31,4 +31,14 @@ echo $queue->dequeue();*/
 //echo $obj; //将对象转换成字符串 __toString()
 //echo $obj(); //将对象当做函数执行 __invoke()
 
+
+// $array = new SplFixdArray(10);
+// $db = \othre\Register::get('db1');
+
+// echo $array[10];
+
+$dn = new other\Database\MySQL();
+$db->connect('127.0.0.1', 'root', 'root', 'hengju');
+$db->query("show databases");
+$db->close();
 ?>

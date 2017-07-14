@@ -14,6 +14,16 @@ class Register
 		self::$objects[$alias] = $object;
 	}
 
+	function get($key)
+	{
+		if(!isset(self::$objects[$key]))
+		{
+			return false;
+		}
+		return self::$objects[$key];
+		
+	}
+
 	/*移除注册*/
 	function _unset()
 	{

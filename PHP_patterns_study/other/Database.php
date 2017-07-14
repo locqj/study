@@ -5,6 +5,13 @@ namespace other;
 /**
 * 
 */
+
+interface IDatabases
+{
+	function connect($host, $user, $pwd, $dbName);
+	function query($sql);
+	function close();
+}
 class Database 
 {	
 	private $db;
