@@ -37,8 +37,55 @@ echo $queue->dequeue();*/
 
 // echo $array[10];
 
-$dn = new other\Database\MySQL();
-$db->connect('127.0.0.1', 'root', 'root', 'hengju');
-$db->query("show databases");
-$db->close();
+// $dn = new other\Database\MySQL();
+// $db->connect('127.0.0.1', 'root', 'root', 'hengju');
+// $db->query("show databases");
+// $db->close();
+
+
+// // 策略模式减少硬编码
+// class Page
+// {   
+//     protected $strategy;
+//     function index()
+//     {   
+//         echo 'AD';
+//         $this->strategy->showAd();
+//         echo 'Category';
+//         $this->strategy->showCategory();
+        
+//     }
+
+
+//     function setStrategy(\other\UserStrategy $strategy)
+//     {
+//         $this->strategy = $strategy;
+//     }
+   
+
+// }
+
+
+// $page = new Page();
+// // 通过浏览器访问的get不一样来控制，这样维护起来也方便，只需要新增策略类，然后再set就可以的 这样解偶， 将两个类互相依赖的关系叫做紧偶，不利于维护和开发
+// if(isset($_GET['female'])) {
+//     $strategy = new \other\FemaleUserStrategy;
+// } else {
+//     $strategy = new \other\MaleUserStrategy;    
+// }
+
+// $page->setStrategy($strategy);
+// $page->index();
+ 
+// //  end
+
+/** 数据对象映射模式，是将对象和数据储存映射起来，对一个对象的操作会映射为数据存储的操作
+ * eg： 实现一个orm类 将sql映射成简单的orm
+ *
+**/
+$user = new \other\User(5);
+
+var_dump($user->id);
+
+
 ?>

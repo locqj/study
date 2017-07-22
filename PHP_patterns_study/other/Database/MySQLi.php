@@ -11,7 +11,7 @@ class MySQLi implements IDatabase
 	function conntect($host, $user, $pwd, $dbname)
 	{
 		$conn = mysqli_connect($host, $userm, $pwd, $dbname);
-		$this->conn = $conn
+		$this->conn = $conn;
 	}
 
 	function query($sql)

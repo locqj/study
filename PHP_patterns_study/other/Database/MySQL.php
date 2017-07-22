@@ -7,11 +7,10 @@ use other\IDatabase;
 class MySQL implements IDatabase
 {
 	function connect($host, $user, $pwd, $dbname)
-	{
+	{	
 		$conn = mysql_connect($host, $user, $pwd);
 		mysql_select_db($dbname, $conn);
 		$this->conn = $conn;
-
 	}
 
 	function query($sql)
