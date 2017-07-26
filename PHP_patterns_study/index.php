@@ -83,9 +83,58 @@ echo $queue->dequeue();*/
  * eg： 实现一个orm类 将sql映射成简单的orm
  *
 **/
-$user = new \other\User(5);
+/* 观察者模式（Observer）, 当一个对象状态发生改变时，依赖他的对象会收到通知，并自动更新低耦合 */
+/* 这样写就可以解耦两个逻辑，还可以动态关闭观察者 */
+/* 
+class Event extends \other\EventGenerator
+{
+    function trigger()
+    {
+        echo "Event<br/>\n";
+        $this->notify();
+    }
+}
+class Observer1 implements \other\Observer
+{
+    function update($event_info = null)
+    {
+        echo "逻辑！观察者1";
+    }
+}
 
-var_dump($user->id);
+class Observer2 implements \other\Observer
+{
+    function update($event_info = null)
+    {
+        echo "逻辑！观察者2";
+    }
+}
+
+$event = new Event;
+$event->addObserver(new Observer1);
+$event->addObserver(new Observer2);
+$event->trigger(); */
+
+/* ============================================================================= */
 
 
+/* ===========================================原型模式=========================== */
+
+/* new 一个原型对象，每次画布就不再需要初始化了， 直接克隆，节省开销 这样就节省重复性代码*/
+/* $yuanxing = new other\Canvas();
+$yuanxing->init();
+
+$canvas1 = clone $yuanxing;
+$canvas1->rect(3, 4, 5, 25);
+$canvas1->draw();
+
+
+
+$canvas2 = clone $yuanxing;
+$canvas2->rect(3, 4, 5, 25);
+$canvas2->draw(); */
+/* ============================================================================= */
+/* ===========================================装饰器模式=========================== */
+/* 动态添加修改类的功能，传统的就是一个类提供一个功能，如果要在修改并添加额外的功能， 传统编程就需要用子类继承，并实现他的方法， 使用装饰器就可以避免这个问提 */
+/* ============================================================================= */
 ?>
