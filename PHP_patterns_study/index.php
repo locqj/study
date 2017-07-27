@@ -150,8 +150,21 @@ $canvas1->draw(); */
 /* 在客户端和实体之间建立一个代理对象proxy，客户端对实体进行操作全部委派给代理对象，隐藏具体实现细节，proxy还可以代码分离，部署到另外的服务器。业务代码中通过RPC来委派 */
 
 /* ============================================================================= */
-    $conn = mysqli_connect('127.0.0.1','root','root','test');
-    
+/* $conn = mysqli_connect('127.0.0.1','root','root','test');
+if ($conn->connect_errno) {
+    printf("Connect failed: %s\n", $mysqli->connect_error);
+    exit();
+}
+if ($result = $conn->query("SELECT * FROM staff_employee LIMIT 10")) {
+    printf("Select returned %d rows.\n", $result->num_rows);
+    $result->close();
+}   */
 
+
+// $config = new \other\Config(__DIR__.'/configs');
+//var_dump($config['controller']); 
+
+//$db = \other\Factory::getDatabase();
+other\Application::getInstance(__DIR__)->dispatch();
 
 ?>

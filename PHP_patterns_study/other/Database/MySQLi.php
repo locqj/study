@@ -7,10 +7,12 @@ use other\IDatabase;
 * 
 */
 class MySQLi implements IDatabase
-{
-	function conntect($host, $user, $pwd, $dbname)
+{	
+	protected $conn;
+
+	function connect($host, $user, $pwd, $dbname)
 	{
-		$conn = mysqli_connect($host, $userm, $pwd, $dbname);
+		$conn = mysqli_connect($host, $user, $pwd, $dbname);
 		$this->conn = $conn;
 	}
 
