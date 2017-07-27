@@ -2,7 +2,6 @@
 echo 'start'
 git add .
 git status
-TIME = time
-git commit -m 'tag${TIME}'
+git commit -m 'tag+date'
 git push
 echo 'end'
