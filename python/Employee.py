@@ -24,5 +24,3 @@ emp1.displayEmployee()
 # emp2.displayEmployee()
 print "Total Employee %d" % Employee.empCount
 print "age %d" % emp1.age
-
-

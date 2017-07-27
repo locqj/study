@@ -2,6 +2,6 @@
 echo 'start'
 git add .
 git status
-git commit -m 'testshellasd'
+git commit -m 'testshell'
 git push
-echo 'end'
+echo done
