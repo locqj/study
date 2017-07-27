@@ -1,7 +1,7 @@
 #!/bin/bash
 echo 'start'
+date1=$(date +%Y-%m-%d)
 git add .
 git status
-git commit -m 'testshell'
+git commit -m $date1'study tag'
 git push
-echo done

@@ -1,7 +1,7 @@
 <?php
 namespace other;
 
-class Canvas
+class Canvas implements DrawDecorator
 {
     public $data;
     protected $decorators = array();
@@ -20,11 +20,12 @@ class Canvas
         $this->data = $data;
     }
 
+    /* 添加装饰器 */
     function addDecorator(DrawDecorator $decorator)
     {
         $this->decorators[] = $decorator;
     }
-
+    /* 渲染画布之前调用 */
     function beforeDraw()
     {
         foreach($this->decorators as $decorator)
@@ -32,10 +33,10 @@ class Canvas
             $decorator->beforeDraw();
         }
     }
-
+    /* 渲染画布之后调用 */
     function afterDraw()
     {
-        $decorators = array_reverse($this->decorators);
+        $decorators = array_reverse($this->decorators);//反转
         foreach($decorators as $decorator)
         {
             $decorator->afterDraw();
