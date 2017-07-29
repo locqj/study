@@ -1,6 +1,6 @@
 #!/bin/bash
 echo 'start'
-date1=$(date +%Y-%m-%d)
+date1=$(date +%Y-%m-%d %H%M%S)
 git add .
 git status
 git commit -m $date1'study tagll'
