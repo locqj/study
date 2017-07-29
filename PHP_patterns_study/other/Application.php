@@ -32,7 +32,7 @@ class Application
         $c = ucwords($c);
         $class = '\\App\\Controller\\'.$c;
         $obj = new $class($c, $v);
-
+        echo $obj;
         $controller_config = $this->config['controller'];
         $decorators = array();
         if (isset($controller_config[$c_low]['decorator']))

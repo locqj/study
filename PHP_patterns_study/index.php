@@ -161,8 +161,8 @@ if ($result = $conn->query("SELECT * FROM staff_employee LIMIT 10")) {
 }   */
 
 
-// $config = new \other\Config(__DIR__.'/configs');
-//var_dump($config['controller']); 
+ // $config = new \other\Config(__DIR__.'/configs');
+//var_dump($config['controller']);  
 
 //$db = \other\Factory::getDatabase();
 other\Application::getInstance(__DIR__)->dispatch();
