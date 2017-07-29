@@ -1,6 +1,6 @@
 #!/bin/bash
 echo 'start'
-date1=$(date +%Y-%m-%d %H:%M:%S)
+date1=$(date +%Y-%m-%d)
 #dated=`date '+%Y-%m-%d %H:%M:%S'`
 echo $date
 git add .
