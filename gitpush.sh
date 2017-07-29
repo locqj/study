@@ -7,5 +7,6 @@ echo $date1+$time1
 echo $date
 git add .
 git status
-git commit -m $date1'study tag'
+git commit -m $date1$time1'study tag'
 git push
+
